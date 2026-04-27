@@ -1,0 +1,177 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-magic: var(--magic);
+  --color-magic-foreground: var(--magic-foreground);
+  --color-sakura: var(--sakura);
+  --color-energy: var(--energy);
+  --font-display: "Bangers", system-ui, sans-serif;
+  --font-body: "Zen Maru Gothic", "Quicksand", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1.25rem;
+
+  /* Senac official palette — deep blue base with anime neon */
+  /* Senac Blue #004587 ≈ oklch(0.38 0.16 260) */
+  /* Senac Orange #ff8b00 ≈ oklch(0.74 0.19 55) */
+  --background: oklch(0.22 0.10 260);
+  --foreground: oklch(0.98 0.01 250);
+
+  --card: oklch(0.30 0.13 260);
+  --card-foreground: oklch(0.98 0.01 250);
+
+  --popover: oklch(0.30 0.13 260);
+  --popover-foreground: oklch(0.98 0.01 250);
+
+  /* Senac Blue primary */
+  --primary: oklch(0.42 0.17 260);
+  --primary-foreground: oklch(0.98 0.01 250);
+
+  /* Senac Orange secondary */
+  --secondary: oklch(0.74 0.19 55);
+  --secondary-foreground: oklch(0.18 0.06 260);
+
+  --muted: oklch(0.34 0.10 260);
+  --muted-foreground: oklch(0.86 0.03 250);
+
+  /* Senac Orange accent — destaques e CTAs */
+  --accent: oklch(0.74 0.19 55);
+  --accent-foreground: oklch(0.18 0.06 260);
+
+  --destructive: oklch(0.65 0.27 25);
+  --destructive-foreground: oklch(0.98 0.01 280);
+
+  --border: oklch(0.55 0.16 260);
+  --input: oklch(0.34 0.10 260);
+  --ring: oklch(0.74 0.19 55);
+
+  /* Custom anime tokens — neon over Senac base */
+  --magic: oklch(0.55 0.20 260);
+  --magic-foreground: oklch(0.98 0.01 250);
+  --sakura: oklch(0.80 0.16 55);
+  --energy: oklch(0.74 0.19 55);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.42 0.17 260) 0%, oklch(0.55 0.20 260) 50%, oklch(0.74 0.19 55) 100%);
+  --gradient-magic: linear-gradient(135deg, oklch(0.42 0.17 260), oklch(0.55 0.20 260));
+  --gradient-energy: linear-gradient(135deg, oklch(0.80 0.18 60), oklch(0.68 0.20 40));
+  --gradient-night: radial-gradient(ellipse at top, oklch(0.34 0.14 260), oklch(0.18 0.08 260));
+
+  --shadow-glow: 0 0 40px oklch(0.74 0.19 55 / 0.55), 0 0 80px oklch(0.42 0.17 260 / 0.45);
+  --shadow-card: 0 20px 60px -10px oklch(0.12 0.08 260 / 0.7), 0 0 0 2px oklch(0.55 0.16 260 / 0.5);
+  --shadow-button: 0 8px 0 0 oklch(0.55 0.18 45), 0 12px 24px -6px oklch(0.12 0.08 260 / 0.55);
+}
+
+.dark {
+  --background: oklch(0.22 0.10 260);
+  --foreground: oklch(0.98 0.01 250);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slide-in-bounce {
+  0% { opacity: 0; transform: translateX(-100px) rotate(-10deg); }
+  60% { opacity: 1; transform: translateX(10px) rotate(2deg); }
+  100% { opacity: 1; transform: translateX(0) rotate(0); }
+}
+
+@keyframes power-up {
+  0% { opacity: 0; transform: scale(0.3) rotate(-180deg); filter: blur(20px); }
+  60% { opacity: 1; transform: scale(1.1) rotate(10deg); filter: blur(0); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.74 0.19 55 / 0.6), 0 0 40px oklch(0.42 0.17 260 / 0.4); }
+  50% { box-shadow: 0 0 50px oklch(0.74 0.19 55 / 0.9), 0 0 90px oklch(0.42 0.17 260 / 0.6); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px) rotate(-1deg); }
+  75% { transform: translateX(4px) rotate(1deg); }
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html, body, #root { height: 100%; }
+
+  body {
+    background: var(--gradient-night);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-magic { background: var(--gradient-magic); }
+  .bg-gradient-energy { background: var(--gradient-energy); }
+  .bg-gradient-night { background: var(--gradient-night); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-button { box-shadow: var(--shadow-button); }
+
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+  .animate-slide-up { animation: slide-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .animate-slide-in-bounce { animation: slide-in-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .animate-power-up { animation: power-up 0.9s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+  .animate-shake { animation: shake 0.4s ease-in-out; }
+
+  .text-stroke {
+    -webkit-text-stroke: 2px oklch(0.18 0.05 290);
+    paint-order: stroke fill;
+  }
+}

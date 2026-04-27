@@ -1,0 +1,3 @@
+# Coloque aqui as ilustrações das profissões.
+# Use os nomes definidos em `imagePath` no array COURSES (src/lib/quiz-data.ts).
+# Formatos aceitos: .webp, .jpg, .jpeg, .png, .avif
