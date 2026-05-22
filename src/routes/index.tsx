@@ -223,7 +223,7 @@ function ResultScreen({ course, onReset }: { course: Course; onReset: () => void
               }}
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0  via-transparent to-transparent" />
           </div>
         </div>
         <Sparkles className="absolute -top-3 -right-2 h-10 w-10 text-accent animate-sparkle" />
